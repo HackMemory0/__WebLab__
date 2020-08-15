@@ -1,41 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24ab9a9b-584c-45b2-b000-23991a67e668" name="Default Changelist" comment="lab1 start">
-      <change afterPath="$PROJECT_DIR$/static/templates/area/history.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/templates/area/time.php" afterDir="false" />
+    <list default="true" id="24ab9a9b-584c-45b2-b000-23991a67e668" name="Default Changelist" comment="finish lab1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/0568ed8388af28db0542b0c5abd4fb07.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/19616919e9ee4fb8d38bb1df930bde3e.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/1a95ee7c9fe6940a55f77c13aca6942f.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/1f67b430a5e5c94faf4c1b760919c505.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/1fa11195756307b2208f4650966860f8.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/28996b2756cc3db425a9c12852023e54.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/385ddb0238b7b2c34b36e983e6687303.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/3b6331d99bf285d3577e1d27a6e4c5ef.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/441954d29ad2a375cef8ea524a2c7e73.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/480d630c1ccc06bad4e5940cf8003928.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/4aef4e927cc00e9f06158f1f449d4179.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/5fd0b37cd7dbbb00f97ba6ce92bf5add.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/698d51a19d8a121ce581499d7b701668.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/7d12f51fb6c17f57ab81289162d8a21e.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/7d7c45b9a935cf9d845fc75679a41559.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/80868732f35513fbc89601e098db6bca.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/9f3249ab97cfbf124733781afbbc91f3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/9fc3d7152ba9336a670e36d0ed79bc43.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/b11550fa2a5057674ed7901884322633.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/be9f4cd2b60696afae2eac4c3f99c5d6.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/d41d8cd98f00b204e9800998ecf8427e.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/e6dbcb89a42675f03bf625d33b02dc69.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/ef62c6e0aea26640aeedf9b57c7e4888.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/area_cache/fa7c97c34481e65aa976b47cf6c03ab3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Utilites.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Utilites.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/FormView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FormView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/area/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/area/form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP55" />
@@ -66,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="G:/OpenServer/OSPanel/modules/php/PHP-5.5/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -93,7 +65,7 @@
       <workItem from="1596478448838" duration="7110000" />
       <workItem from="1596640588128" duration="22650000" />
       <workItem from="1596688351737" duration="1681000" />
-      <workItem from="1597408825918" duration="24261000" />
+      <workItem from="1597408825918" duration="25782000" />
     </task>
     <task id="LOCAL-00001" summary="lab1 start">
       <created>1597440118569</created>
@@ -102,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597440118569</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="finish lab1">
+      <created>1597516950583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597516950583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +89,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab1 start" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab1 start" />
+    <MESSAGE value="finish lab1" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish lab1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="86" key="#CLI_Interpreters" timestamp="1596489399744">
@@ -133,10 +113,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596657498223" />
-    <state x="550" y="186" key="FileChooserDialogImpl" timestamp="1596489389732">
+    <state x="550" y="186" key="FileChooserDialogImpl" timestamp="1597519021745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="550" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596489389732" />
+    <state x="550" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597519021745" />
+    <state x="647" y="310" key="Github.ShareDialog" timestamp="1597519121079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="647" y="310" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1597519121079" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597503238690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -169,5 +153,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1597505598707" />
+    <state x="599" y="203" key="svn.repositoryBrowser" timestamp="1597519034168">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="599" y="203" key="svn.repositoryBrowser/0.0.1536.824@0.0.1536.824" timestamp="1597519034168" />
+    <state x="579" y="186" key="svn4idea.import.options" timestamp="1597519032983">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="579" y="186" key="svn4idea.import.options/0.0.1536.824@0.0.1536.824" timestamp="1597519032983" />
   </component>
 </project>
