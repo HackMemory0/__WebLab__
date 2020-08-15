@@ -4,6 +4,7 @@
 
 html, body {
     font-family: manaspc, serif;
+    color: #d62020;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -11,6 +12,21 @@ html, body {
     position: relative;
     font-size: 16pt;
     min-width: 690px;
+}
+
+.form-error-container:not(.shown-form-error-container) {
+    display: none;
+}
+
+#form-error-container {
+    border: solid 2px darkred;
+}
+
+.bad-content {
+    padding: 1px;
+    border: solid 1px #999;
+    background: #111;
+    color: #fff;
 }
 
 #body {

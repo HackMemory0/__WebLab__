@@ -1,10 +1,13 @@
 <?php
+
+use WebLab\Utils\Utilites;
+
 if (!defined('LAB1')) die();
 
 ?>
 
 
-<form action="../../../index.php" method="get" id="form">
+<form action="<?= Utilites::url(__DIR__.'../../../../index.php'); ?>" method="get" id="form">
     <table class="mainbox">
         <tr>
             <td><label for="x-input">X: </label></td>
@@ -34,5 +37,3 @@ if (!defined('LAB1')) die();
         </tr>
     </table>
 </form>
-
-

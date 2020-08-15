@@ -12,6 +12,11 @@ define('__ROOT__', __DIR__);
 
 Loader::init();
 
+session_start();
+if (!isset($_SESSION['results'])) {
+    $_SESSION['results'] = [];
+}
+
 $xArr = null;
 $xNew = null;
 if (key_exists('x', $_GET)) {

@@ -11,9 +11,6 @@ use WebLab\Utils\Utilites;
     <link rel="icon" type="image/gif" href="<?= Utilites::url(__DIR__.'/../images/ico.gif'); ?> "/>
     <link rel="stylesheet" type="text/css" href="<?= Utilites::url(__DIR__.'/../css/style.css'); ?>">
     <title>LabWork1</title>
-
-
-    <script src="<?= Utilites::url(__DIR__.'/../js/script.js'); ?>"></script>
 </head>
 
 <body style="background-color: #000000"></body>
@@ -47,16 +44,22 @@ use WebLab\Utils\Utilites;
         <?php $this->areaView->render(); ?>
         </td></tr>
 
+        <tr class="form-error-container">
+            <td id="form-error-container" colspan="2"><h1></h1></td>
+        </tr>
+
         <tr><td>
         <?php $this->formView->render(); ?>
         </td></tr>
 
 
         <tr><td>
-        <img draggable="false" src="<?= Utilites::url(__DIR__.'/../images/gl1.png'); ?>" height="100" width="875" alt="">
+        <img draggable="false" src="<?= Utilites::url(__DIR__.'/../images/itmo_logo.gif'); ?>" height="200" width="875" alt="">
         </td></tr>
     </table>
 </div>
+
+<script src="<?= Utilites::url(__DIR__.'/../js/script.js'); ?>"></script>
 </body>
 
 </html>

@@ -10,13 +10,19 @@ class Utilites
         return str_replace(__ROOT__, '.', $path);
     }
 
-    public static function toFloat($value) {
-        $float = (float)$value;
+    public static function calcDuration($start, $finish)
+    {
+        $startCalcTime = explode(' ', $start);
+        $finishCalcTime = explode(' ', $finish);
 
-        if ((string)$float != $value) {
-            throw new \InvalidArgumentException('$value is not a numeric!');
-        }
+        $calcTimeSec = $finishCalcTime[1] - $startCalcTime[1];
+        $calcTimeMsec = $finishCalcTime[0] - $startCalcTime[0];
 
-        return $float;
+        if ($calcTimeSec === 0)
+            return round($calcTimeMsec, 10);
+        else
+            return $calcTimeSec + $calcTimeMsec;
     }
+
+
 }
