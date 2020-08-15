@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24ab9a9b-584c-45b2-b000-23991a67e668" name="Default Changelist" comment="finish lab1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="24ab9a9b-584c-45b2-b000-23991a67e668" name="Default Changelist" comment="finish lab1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +53,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\akper\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="24ab9a9b-584c-45b2-b000-23991a67e668" name="Default Changelist" comment="" />
@@ -65,7 +66,7 @@
       <workItem from="1596478448838" duration="7110000" />
       <workItem from="1596640588128" duration="22650000" />
       <workItem from="1596688351737" duration="1681000" />
-      <workItem from="1597408825918" duration="25782000" />
+      <workItem from="1597408825918" duration="26484000" />
     </task>
     <task id="LOCAL-00001" summary="lab1 start">
       <created>1597440118569</created>
@@ -81,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597516950583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finish lab1">
+      <created>1597519149036</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597519149036</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,10 +125,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="550" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597519021745" />
-    <state x="647" y="310" key="Github.ShareDialog" timestamp="1597519121079">
+    <state x="647" y="310" key="Github.ShareDialog" timestamp="1597519206479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="647" y="310" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1597519121079" />
+    <state x="647" y="310" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1597519206479" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597503238690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
