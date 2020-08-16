@@ -36,7 +36,8 @@ use WebLab\Utils\Utilites;
                 <img draggable="false" src="<?= Utilites::url(__DIR__.'/../images/gl2.png'); ?>" height="100" width="875" alt="">
 
                 <h1>LabWork#1</h1>
-                <h2>Web-Programming  #2601</h2>
+                <h1 style="color: #319d5e">Web-Programming  #2601</h1>
+                <h1 style="color: #6600CC">Akbar Aliyev #P3230</h1>
             </td>
         </tr>
 
