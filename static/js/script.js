@@ -1,10 +1,5 @@
 "use strict";
 
-var audio = new Audio('../static/bgmoosik.ogg');
-audio.volume = 0.05
-audio.loop = true
-audio.play();
-
 
 function displayFormError(error, element) {
     document.querySelectorAll(".form-error-container").forEach(node => node.classList.add("shown-form-error-container"));

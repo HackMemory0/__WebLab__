@@ -67,12 +67,6 @@ label {
     color: #d4ff00;
 }
 
-.photo img {
-    max-width: 875px;
-    height: 100%;
-    overflow: hidden;
-}
-
 a {
     color: #6600CC;
     text-decoration: none;
@@ -93,20 +87,13 @@ h2 {
     background-color: black;
 }
 
-h3 {
+h3, h5 {
     font-family: manaspc, serif;
     color: #6600CC;
     font-size: 24px;
     background-color: black;
 }
 
-
-h5 {
-    font-family: manaspc, serif;
-    color: #6600CC;
-    font-size: 24px;
-    background-color: black;
-}
 
 .mainbox {
     margin: 15px auto;
@@ -120,16 +107,13 @@ h5 {
 }
 
 .text-center {
-    text-align: center!important;
+    text-align: center;
 }
 
 .text-right {
-    text-align: right!important;
+    text-align: right;
 }
 
-.pt-1, .py-1 {
-    padding-top: .25rem!important;
-}
 .col-4 {
     flex: 0 0 33.33333%;
     max-width: 33.33333%;
@@ -141,13 +125,13 @@ h5 {
 }
 
 .align-items-center {
-    align-items: center!important;
+    align-items: center;
 }
 .justify-content-between {
-    justify-content: space-between!important;
+    justify-content: space-between;
 }
 .flex-nowrap {
-    flex-wrap: nowrap!important;
+    flex-wrap: nowrap;
 }
 
 .row {
