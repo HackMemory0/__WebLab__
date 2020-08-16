@@ -25,7 +25,7 @@ use WebLab\Utils\Utilites;
             </div>
 
             <div class="col-4 text-right">
-                <a target="_blank" href="https://github.com/HackMemory0">GitHub/HackMemory0</a>
+                <a target="_blank" href="https://github.com/HackMemory0/__WebLab__/tree/lab1">GitHub/HackMemory0</a>
             </div>
         </div>
     </header>
