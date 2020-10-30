@@ -1,0 +1,40 @@
+
+@media only screen and (min-width: 768px) and (min-height: 540px) {
+  .digit {
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    width: 300px;
+    font: 58px/300px Arial;
+  }
+
+  .clock {
+    width: 300px;
+    height: 300px;
+    border: solid 15px #333;
+    margin: calc(50vh - 150px) calc(50% - 150px);
+  }
+
+  .hour {
+    top: calc(50% - 57.5px);
+    left: calc(50% - 2.5px);
+    width: 5px;
+    height: 60px;
+    transform-origin: 2.5px 57.5px;
+  }
+
+  .min {
+    top: calc(50% - 102.5px);
+    left: calc(50% - 2.5px);
+    width: 5px;
+    height: 105px;
+    transform-origin: 2.5px 102.5px;
+  }
+
+  .sec {
+    top: calc(50% - 118.75px);
+    left: calc(50% - 1.25px);
+    width: 2.5px;
+    height: 120px;
+    transform-origin: 1.25px 118.75px;
+  }
+}

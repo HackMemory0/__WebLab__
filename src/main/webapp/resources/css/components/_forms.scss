@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+@import "../base/utils";
+
+.black .active a,
+.black .active a:hover {
+  background-color: black;
+}
+
+.nav-pills .pill-1 .nav-link:not(.active) {
+  background-color: black;
+}
+
+.nav-pills .pill-1 .nav-link {
+  background-color: black;
+  color: white;
+}
+
+.btn-label {
+  position: relative;
+  left: -3px;
+  display: inline-block;
+  margin: -2px 0 1px;
+}
+
+.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.btn { margin-bottom:10px; }

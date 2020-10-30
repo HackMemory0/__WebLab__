@@ -1,0 +1,76 @@
+@import "../abstracts/variables";
+
+.clock {
+  width: 200px;
+  height: 200px;
+  border: $clock-border-color;
+  border-radius: 50%;
+  margin: calc(50vh - 100px) calc(50% - 100px);
+  position: relative;
+  background: $clock-background;
+  cursor: pointer;
+}
+
+.dot {
+  background: $clock-dot-color;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  display: none;
+}
+.spire {
+  position: absolute;
+}
+
+.hour {
+  top: calc(50% - 37.5px);
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 40px;
+  border-radius: 0 0 5px 5px;
+  background: $clock-hour-color;
+  z-index: 4;
+  transform-origin: 2.5px 37.5px;
+  transition: transform 2s ease;
+}
+
+.min {
+  top: calc(50% - 67.5px);
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 70px;
+  border-radius: 0 0 5px 5px;
+  background: $color-min-color;
+  z-index: 3;
+  transform-origin: 2.5px 67.5px;
+  transition: transform 1s ease;
+}
+
+.sec {
+  top: calc(50% - 78.75px);
+  left: calc(50% - 1.25px);
+  width: 2.5px;
+  height: 80px;
+  border-radius: 0 0 2.5px 2.5px;
+  background: $color-sec-color;
+  z-index: 2;
+  transform-origin: 1.25px 78.75px;
+  transition: transform .5s ease;
+}
+
+.digit {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  font: 42px/200px Arial;
+  color: rgba(32, 32, 32, 0.6);
+  display: none;
+  z-index: -10;
+}
+
+.clock:hover + .digit {
+  display: block;
+}

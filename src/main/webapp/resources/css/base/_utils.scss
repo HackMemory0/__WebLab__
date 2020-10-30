@@ -1,0 +1,4 @@
+
+@function resource_url($url) {
+  @return url + "(\#{resource['#{$url}']})";
+}
