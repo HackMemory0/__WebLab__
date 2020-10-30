@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <h:link class="nav-link active" href="#" outcome="toMain">Start</h:link>
+                        <h:link class="nav-link active" href="#" outcome="toMain">Main</h:link>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -42,25 +42,48 @@
         </nav>
 
 
-
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
+            <main class="col-12 pt-5">
+                <div class="jumbotron">
 
-                    <div class="clock">
-                        <div class="dot"></div>
-                        <div class="spire hour"></div>
-                        <div class="spire min"></div>
-                        <div class="spire sec"></div>
-                    </div>
-                    <div class="digit">00:00</div>
+                        <div class="row">
 
+                            <div class="col-4">
+                                <div class="clock">
+                                    <div class="dot"></div>
+                                    <div class="spire hour"></div>
+                                    <div class="spire min"></div>
+                                    <div class="spire sec"></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <h1 class="display-4">Hello, world!</h1>
+                                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-4"/>
+                        <p class="text-right">
+                            <h:link class="btn btn-primary btn-lg" href="#" outcome="toMain" role="button">Go to main</h:link>
+                        </p>
                 </div>
-            </div>
+            </main>
         </div>
 
+        <div style="display: inline-block; height: 200px"></div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"/>
+        <footer class="mt-auto shadow">
+            <div class="footer-copyright text-center py-3">@ P3230 Akbar Aliyev
+            </div>
+        </footer>
+<!--        <footer class="footer page-footer">-->
+<!--            <div class="container">-->
+<!--                <span class="text-muted">Place sticky footer content here.</span>-->
+<!--            </div>-->
+<!--        </footer>-->
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"/>
         <h:outputScript library="js" name="bootstrap.min.js"/>
         <h:outputScript library="js" name="clock.js"/>
     </h:body>

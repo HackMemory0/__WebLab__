@@ -5,10 +5,10 @@
   height: 200px;
   border: $clock-border-color;
   border-radius: 50%;
-  margin: calc(50vh - 100px) calc(50% - 100px);
+  margin: 0 calc(50% - 100px);
   position: relative;
   background: $clock-background;
-  cursor: pointer;
+  box-shadow: $clock-shadow;
 }
 
 .dot {
@@ -58,19 +58,4 @@
   z-index: 2;
   transform-origin: 1.25px 78.75px;
   transition: transform .5s ease;
-}
-
-.digit {
-  position: absolute;
-  top: calc(50% - 100px);
-  left: calc(50% - 100px);
-  width: 200px;
-  font: 42px/200px Arial;
-  color: rgba(32, 32, 32, 0.6);
-  display: none;
-  z-index: -10;
-}
-
-.clock:hover + .digit {
-  display: block;
 }
