@@ -1,15 +1,12 @@
 var hourElt = document.getElementsByClassName("hour")[0],
     minElt = document.getElementsByClassName("min")[0],
-    secElt = document.getElementsByClassName("sec")[0],
-    digit = document.getElementsByClassName("digit")[0];
+    secElt = document.getElementsByClassName("sec")[0];
 
 interval = 1000;
-moveTime();
 
-function moveTime() {
-    show();
-    setInterval(show, interval);
-}
+show();
+setInterval(show, interval);
+
 
 function show() {
     const date = new Date();
