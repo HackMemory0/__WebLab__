@@ -1,50 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://java.sun.com/jstl/core">
-<f:view>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
-        <a class="navbar-brand" href="#">
-            <h:graphicImage library="img" name="owl.svg" width="30" height="30" class="d-inline-block align-top" />
-            JSFApp
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://java.sun.com/jstl/core">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <c:if test="${page == 'index'}">
-                    <li class="nav-item">
-                        <h:link class="nav-link active" href="#">Home</h:link>
-                    </li>
-                    <li class="nav-item">
-                        <h:link class="nav-link" href="#" outcome="toMain">Main</h:link>
-                    </li>
-                </c:if>
-                <c:if test="${page == 'main'}">
-                    <li class="nav-item">
-                        <h:link class="nav-link" href="#" outcome="toIndex">Home</h:link>
-                    </li>
-                    <li class="nav-item">
-                        <h:link class="nav-link active" href="#">Main</h:link>
-                    </li>
-                </c:if>
-            </ul>
-            <ul class="navbar-nav ml-auto">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
+    <a class="navbar-brand" href="#">
+        <h:graphicImage library="img" name="owl.svg" width="30" height="30" class="d-inline-block align-top" />
+        JSFApp
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <c:if test="${page == 'index'}">
                 <li class="nav-item">
-                    <a target="_blank" href="https://github.com/HackMemory0/__WebLab__" class="btn btn-dark" role="button" >
-                        <h:graphicImage library="img" name="github.svg" width="16" height="16" styleClass="btn-label" />
-                        <span>GitHub</span>
-                    </a>
+                    <h:link class="nav-link active" href="#">Home</h:link>
                 </li>
-            </ul>
-        </div>
-    </nav>
+                <li class="nav-item">
+                    <h:link class="nav-link" href="#" outcome="toMain">Main</h:link>
+                </li>
+            </c:if>
+            <c:if test="${page == 'main'}">
+                <li class="nav-item">
+                    <h:link class="nav-link" href="#" outcome="toIndex">Home</h:link>
+                </li>
+                <li class="nav-item">
+                    <h:link class="nav-link active" href="#">Main</h:link>
+                </li>
+            </c:if>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a target="_blank" href="https://github.com/HackMemory0/__WebLab__" class="btn btn-dark" role="button" >
+                    <h:graphicImage library="img" name="github.svg" width="16" height="16" styleClass="btn-label" />
+                    <span>GitHub</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-</f:view>
-</html>
+</ui:composition>

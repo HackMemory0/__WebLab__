@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
 
     <h:head>
         <ui:include src="template/head.xhtml"/>
@@ -16,7 +13,138 @@
             <ui:param name="page" value="main"></ui:param>
         </ui:include>
 
+
+        <div class="container">
+
+
+                <div class="mt-5 d-block d-lg-flex justify-content-around">
+                        <div class="d-flex justify-content-center">
+                            <svg id="graph-svg"  width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+                                <!--square-->
+                                <rect class="graph-shape" x="60" y="60" width="140" height="140" />
+
+                                <!--triangle-->
+                                <polygon class="graph-shape" points="200,200 200,60 270,200" />
+
+                                <!--circle-->
+                                <path  class="graph-shape" d="M 200 340 A 180 180 0 0 0 340 200 L 200 200 Z"/>
+
+                                <!--text-->
+                                <text class="graph-label" x="53" y="195">-R</text>
+                                <text class="graph-label" x="118" y="195">-R/2</text>
+                                <text class="graph-label" x="262" y="195">R/2</text>
+                                <text class="graph-label" x="335" y="195">R</text>
+                                <text class="graph-label" x="205" y="64">R</text>
+                                <text class="graph-label" x="205" y="134">R/2</text>
+                                <text class="graph-label" x="205" y="273">-R/2</text>
+                                <text class="graph-label" x="205" y="343">-R</text>
+
+                                <!--lines-->
+                                <polygon class="graph-axle-line" points="15,200 60,200 60,197 60,203 60,200 130,200 130,197 130,203 130,200 270,200 270,197 270,203         270,200 340,200 340,197 340,203 340,200 385,200 378,197 385,200 378,203 385,200" stroke="black"/>
+                                <polygon class="graph-axle-line" points="200,385 200,340 197,340 203,340 200,340 200,270 197,270 203,270 200,270 200,130 197,130         203,130 200,130 200,60 197,60 203,60 200,60 200,15 197,22 200,15 203,22 200,15" stroke="black"/>
+
+                                <!--dot-->
+                                <circle id="dot" r="3" cx="200" cy="200" fill="red"/>
+                            </svg>
+                        </div>
+                </div>
+                <div class="invalid-feedback mt-3">Please select r value using the buttons.</div>
+
+
+
+            <div>
+                <h4 class="mb-4 mt-5 mt-lg-0 text-center">Area Form</h4>
+                <div class="d-flex justify-content-center">
+                    <h:form class="d-block">
+
+
+                        <label class="font-weight-bold mb-0">X value:</label>
+                        <div class="d-flex">
+                            <small class="form-text text-muted mr-1 mb-2">Selected:</small>
+                            <small class="form-text text-muted" id="x-selected">0</small>
+                        </div>
+                        <div class="form-group mb-1 d-block">
+                            <ace:sliderEntry length="auto" id="x-value" value="0" min="-5" max="5" stepPercent="10" />
+                        </div>
+
+
+                        <div class="form-group" id="y-input">
+                            <label class="font-weight-bold mb-0" for="y-text">Y value:</label>
+                            <small class="form-text text-muted mb-2">Must be from -3 to 3</small>
+                            <h:inputText autocomplete="off" styleClass="form-control y-text"
+                                         a:placeholder="Enter value" type="text" id="y-text"/>
+                            <div class="invalid-feedback">Please enter valid y value</div>
+                        </div>
+
+
+                        <label class="font-weight-bold mb-0">R value:</label>
+                        <div class="form-group" id="r-input">
+                            <h:commandLink value="1" styleClass="btn btn-light r-button" type="button"/>
+
+                            <h:commandLink value="1.5" styleClass="btn btn-light r-button" type="button"/>
+
+                            <h:commandLink value="2" styleClass="btn btn-light r-button" type="button"/>
+
+                            <h:commandLink value="2.5" styleClass="btn btn-light r-button" type="button"/>
+
+                            <h:commandLink value="3" styleClass="btn btn-light r-button" type="button"/>
+                            <div class="invalid-feedback d-block">Please select R value</div>
+                        </div>
+
+
+                        <div class="form-group text-center mt-4">
+                            <h:commandButton value="Submit" styleClass="btn m-1 btn-primary"
+                                             type="submit" />
+                            <h:commandButton value="Clear form" styleClass="btn m-1 btn-secondary"
+                                             type="button" />
+                            <h:commandButton value="Clear table" styleClass="btn m-1 btn-secondary"
+                                             type="button" />
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="">
+            <div class="mt-md-5">
+                <div>
+                    <h4 class="mb-4 text-center">Results table</h4>
+                    <h:dataTable var="" value="" styleClass="table table-hover text-center" id="results-table">
+                        <h:column>
+                            <f:facet name="header">X value</f:facet>
+
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Y value</f:facet>
+
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">R value</f:facet>
+
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Result</f:facet>
+
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Execution time</f:facet>
+
+                        </h:column>
+                    </h:dataTable>
+                </div>
+            </div>
+        </div>
+
+
+
         <ui:include src="template/footer.xhtml"/>
+
     </h:body>
-</f:view>
 </html>
