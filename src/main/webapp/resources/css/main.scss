@@ -1,5 +1,6 @@
-@import "bootstrap/bootstrap";
+@import 'bootstrap/bootstrap';
 
+@import 'base/screen';
 @import 'components/forms';
+@import 'components/clock';
 @import 'components/graph';
-
