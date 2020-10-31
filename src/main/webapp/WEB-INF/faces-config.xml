@@ -17,7 +17,7 @@
     </navigation-rule>
 
     <navigation-rule>
-        <from-view-id>/view/main.xhtml</from-view-id>
+        <from-view-id>/*</from-view-id>
 
         <navigation-case>
             <from-outcome>toIndex</from-outcome>

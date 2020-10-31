@@ -15,10 +15,10 @@
 
     <h:body>
         <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
-            <a class="navbar-brand" href="#">
+            <h:link class="navbar-brand" href="#" outcome="toIndex">
                 <h:graphicImage library="img" name="owl.svg" width="30" height="30" class="d-inline-block align-top" />
                 JSFApp
-            </a>
+            </h:link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -77,13 +77,8 @@
             <div class="footer-copyright text-center py-3">@ P3230 Akbar Aliyev
             </div>
         </footer>
-<!--        <footer class="footer page-footer">-->
-<!--            <div class="container">-->
-<!--                <span class="text-muted">Place sticky footer content here.</span>-->
-<!--            </div>-->
-<!--        </footer>-->
 
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <h:outputScript library="js" name="bootstrap.min.js"/>
         <h:outputScript library="js" name="clock.js"/>
     </h:body>
