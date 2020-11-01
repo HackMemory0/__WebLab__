@@ -72,12 +72,16 @@
                             <label class="font-weight-bold mb-0" for="y-text">Y value:</label>
                             <small class="form-text text-muted mb-2">Must be from -3 to 3</small>
                             <h:inputText autocomplete="off" styleClass="form-control y-text"
-                                         a:placeholder="Enter value" type="text" id="y-text"/>
+                                         a:placeholder="Enter value" type="text"/>
                             <div class="invalid-feedback">Please enter valid y value</div>
                         </div>
 
 
                         <label class="font-weight-bold mb-0">R value:</label>
+                        <div class="d-flex">
+                            <small class="form-text text-muted mr-1 mb-2">Selected:</small>
+                            <small class="form-text text-muted" id="r-selected">(select value)</small>
+                        </div>
                         <div class="form-group" id="r-input">
                             <h:commandLink value="1" styleClass="btn btn-light r-button" type="button"/>
 
@@ -88,12 +92,12 @@
                             <h:commandLink value="2.5" styleClass="btn btn-light r-button" type="button"/>
 
                             <h:commandLink value="3" styleClass="btn btn-light r-button" type="button"/>
-                            <div class="invalid-feedback d-block">Please select R value</div>
+                            <div class="invalid-feedback">Please select R value</div>
                         </div>
 
 
                         <div class="form-group text-center mt-4">
-                            <h:commandButton value="Submit" styleClass="btn m-1 btn-primary"
+                            <h:commandButton value="Submit" styleClass="btn m-1 btn-primary submit-button"
                                              type="submit" />
                             <h:commandButton value="Clear form" styleClass="btn m-1 btn-secondary"
                                              type="button" />
@@ -145,6 +149,6 @@
 
 
         <ui:include src="template/footer.xhtml"/>
-
+        <h:outputScript library="js" name="validator.js"/>
     </h:body>
 </html>

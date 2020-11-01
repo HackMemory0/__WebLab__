@@ -16,13 +16,13 @@
         </ui:include>
 
         <div class="container">
-            <main class="col-12 pt-5">
+            <main class="pt-5">
                 <div class="jumbotron">
 
                         <div class="row">
 
-                            <div class="col-4">
-                                <div class="clock">
+                            <div class="text-center mx-3 mt-5">
+                                <div class="d-flex justify-content-center clock">
                                     <div class="dot"></div>
                                     <div class="spire hour"></div>
                                     <div class="spire min"></div>
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
 
-                            <div class="col">
+                            <div class="col justify-content-around">
                                 <h1 class="display-4">Hello, world!</h1>
                                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at mollis elit. Sed iaculis velit condimentum, maximus sem vitae, interdum dolor. Nunc sed arcu sed est lobortis semper quis at augue. Donec in consectetur tortor, non ultricies neque. Integer id odio egestas, placerat erat nec, posuere dui. Etiam condimentum posuere nunc nec feugiat. Sed augue ex, egestas faucibus porttitor et, finibus vitae purus.</p>
                             </div>
@@ -47,6 +47,7 @@
         <div style="display: inline-block; height: 200px"></div>
 
         <ui:include src="template/footer.xhtml"/>
+        <h:outputScript library="js" name="clock.js"/>
     </h:body>
 </f:view>
 </html>
