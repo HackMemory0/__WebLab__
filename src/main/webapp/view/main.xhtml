@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ace="http://www.icefaces.org/icefaces/components">
 
@@ -16,9 +17,8 @@
 
         <div class="container">
 
-
                 <div class="mt-5 d-block d-lg-flex justify-content-around">
-                        <div class="d-flex justify-content-center">
+                        <div id="graph-plate" class="d-flex justify-content-center">
                             <svg id="graph-svg"  width="400" height="400" xmlns="http://www.w3.org/2000/svg">
                                 <!--square-->
                                 <rect class="graph-shape" x="60" y="60" width="140" height="140" />
@@ -48,7 +48,8 @@
                             </svg>
                         </div>
                 </div>
-                <div class="invalid-feedback mt-3">Please select r value using the buttons.</div>
+            <div class="invalid-feedback p-5">Please select R value</div>
+
 
 
 
@@ -64,15 +65,19 @@
                             <small class="form-text text-muted" id="x-selected">0</small>
                         </div>
                         <div class="form-group mb-1 d-block">
-                            <ace:sliderEntry length="auto" id="x-value" value="0" min="-5" max="5" stepPercent="10" />
+                            <ace:sliderEntry length="auto" id="x-value" min="-5" max="5" stepPercent="10" value="#{controller.item.x}"  >
+                                <ace:ajax event="slideEnd" execute="@this" render="x-value" />
+                            </ace:sliderEntry>
                         </div>
 
 
                         <div class="form-group" id="y-input">
                             <label class="font-weight-bold mb-0" for="y-text">Y value:</label>
                             <small class="form-text text-muted mb-2">Must be from -3 to 3</small>
-                            <h:inputText autocomplete="off" styleClass="form-control y-text"
-                                         a:placeholder="Enter value" type="text"/>
+                            <h:inputText autocomplete="off" id="y-text" styleClass="form-control y-text"
+                                         a:placeholder="Enter value" type="text" value="#{controller.item.y}">
+                                <f:ajax event="keyup"/>
+                            </h:inputText>
                             <div class="invalid-feedback">Please enter valid y value</div>
                         </div>
 
@@ -83,23 +88,25 @@
                             <small class="form-text text-muted" id="r-selected">(select value)</small>
                         </div>
                         <div class="form-group" id="r-input">
-                            <h:commandLink value="1" styleClass="btn btn-light r-button" type="button"/>
+                            <h:commandLink value="1" styleClass="btn btn-light r-button" type="button" action="#{controller.item.setR(1)}"/>
 
-                            <h:commandLink value="1.5" styleClass="btn btn-light r-button" type="button"/>
+                            <h:commandLink value="1.5" styleClass="btn btn-light r-button" type="button" action="#{controller.item.setR(1.5)}"/>
 
-                            <h:commandLink value="2" styleClass="btn btn-light r-button" type="button"/>
+                            <h:commandLink value="2" styleClass="btn btn-light r-button" type="button" action="#{controller.item.setR(2)}"/>
 
-                            <h:commandLink value="2.5" styleClass="btn btn-light r-button" type="button"/>
+                            <h:commandLink value="2.5" styleClass="btn btn-light r-button" type="button" action="#{controller.item.setR(2.5)}"/>
 
-                            <h:commandLink value="3" styleClass="btn btn-light r-button" type="button"/>
+                            <h:commandLink value="3" styleClass="btn btn-light r-button" type="button" action="#{controller.item.setR(3)}"/>
                             <div class="invalid-feedback">Please select R value</div>
                         </div>
 
 
                         <div class="form-group text-center mt-4">
                             <h:commandButton value="Submit" styleClass="btn m-1 btn-primary submit-button"
-                                             type="submit" />
-                            <h:commandButton value="Clear form" styleClass="btn m-1 btn-secondary"
+                                             type="submit" action="#{controller.addItem}" >
+
+                            </h:commandButton>
+                            <h:commandButton value="Clear form" styleClass="btn m-1 btn-secondary clear-from-button"
                                              type="button" />
                             <h:commandButton value="Clear table" styleClass="btn m-1 btn-secondary"
                                              type="button" />
@@ -116,30 +123,30 @@
             <div class="mt-md-5">
                 <div>
                     <h4 class="mb-4 text-center">Results table</h4>
-                    <h:dataTable var="" value="" styleClass="table table-hover text-center" id="results-table">
+                    <h:dataTable var="point" value="#{controller.items}" styleClass="table table-hover text-center" id="point-table">
                         <h:column>
                             <f:facet name="header">X value</f:facet>
-
+                            #{point.x}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Y value</f:facet>
-
+                            #{point.y}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">R value</f:facet>
-
+                            #{point.r}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Result</f:facet>
-
+                            #{point.hit}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Execution time</f:facet>
-
+                            #{point.time}
                         </h:column>
                     </h:dataTable>
                 </div>

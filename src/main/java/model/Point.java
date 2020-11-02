@@ -1,62 +1,97 @@
 package model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "points")
-public class Point {
+@Table(name = "points", schema = "s289136")
+public class Point implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private double x;
-    private double y;
-    private double r;
-    private boolean hit;
-    private Double executionTime;
+    @Column(name = "x")
+    private Integer x = 0;
 
-    public Point() {}
+    @Column(name = "y")
+    private Double y;
 
-    public Point(double x, double y, double r){
+    @Column(name = "r")
+    private Double r;
+
+    @Column(name = "hit")
+    private Boolean hit;
+
+    @Column(name = "time")
+    private Double time;
+
+
+    public Point(){}
+
+    public Point(int x, double y, double r){
         this.x = x;
         this.y = y;
         this.r = r;
 
         long startTime = System.nanoTime();
-        this.hit = checkArea(x, y, r);
+        this.hit = checkArea(this.x, this.y, this.r);
         long endTime = System.nanoTime();
 
-        this.executionTime = ((double) (endTime - startTime) / 10000000);
+        this.time = ((double) (endTime - startTime) / 10000000);
     }
 
-    public double getX() {
-        return x;
-    }
 
-    public double getY() {
-        return y;
-    }
-
-    public double getR() {
-        return r;
-    }
-
-    public boolean isHit() {
-        return hit;
-    }
-
-    public Double getExecutionTime() {
-        return executionTime;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public Double getY() {
+        return y;
+    }
+
+    public void setY(Double y) {
+        this.y = y;
+    }
+
+    public Double getR() {
+        return r;
+    }
+
+    public void setR(Double r) {
+        this.r = r;
+    }
+
+    public Boolean getHit() {
+        return hit;
+    }
+
+    public void setHit(Boolean hit) {
+        this.hit = hit;
+    }
+
+    public Double getTime() {
+        return time;
+    }
+
+    public void setTime(Double time) {
+        this.time = time;
+    }
+
+
 
     private boolean checkArea(double x, double y, double r){
         // Checks triangle area
@@ -72,5 +107,13 @@ public class Point {
             return true;
         }
         return false;
+    }
+
+    public void calculateArea(){
+        long startTime = System.nanoTime();
+        this.hit = checkArea(this.x, this.y, this.r);
+        long endTime = System.nanoTime();
+
+        this.time = ((double) (endTime - startTime) / 10000000);
     }
 }

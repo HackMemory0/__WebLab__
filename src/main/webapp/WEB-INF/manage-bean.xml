@@ -4,8 +4,8 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
-    <managed-bean eager="true">
-        <managed-bean-name>ControllerBean</managed-bean-name>
+    <managed-bean>
+        <managed-bean-name>controllerBean</managed-bean-name>
         <managed-bean-class>bean.ControllerBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
