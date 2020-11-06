@@ -25,7 +25,7 @@ const loadSession = ({$xSlider, $xSelected, $yText, $rSelected}) => {
     if (rValue != null) $rSelected.text(rValue);
     if (xValue != null) $xSelected.text(xValue);
     if (xValue != null) $xSlider.setValue(xValue);
-    if (yValue != null) $yText.val(yValue).keyup();
+    if (yValue != null) $yText.val(yValue);
 };
 
 
@@ -55,6 +55,120 @@ $(() => {
 
 
     const $rValues = [1, 1.5, 2, 2.5, 3];
+    const $xValues = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+
+
+    /**
+     * Graph
+     */
+
+    const SCALE_X = 400 / $graphSvg.width();
+    const SCALE_Y = 400 / $graphSvg.height();
+
+    let $rawXValue = null;
+    let $rawYValue = null;
+
+
+    $graphSvg.mouseenter(() => {
+        const rValue = getRValue();
+        setGraphRInvalid(checkRValue(rValue), {$rButton});
+    }).mouseleave(() => {
+        resetRawValues();
+        resetRValidity($rButton);
+    }).mousemove((event) => {
+        const offset = $graphSvg.offset();
+        setRawXValue((event.pageX - offset.left) * SCALE_X);
+        setRawYValue((event.pageY - offset.top) * SCALE_Y);
+    }).click(() => {
+        saveRawValues();
+        setCrossings();
+    });
+
+
+
+    createElement = (name) => $(
+        document.createElementNS('http://www.w3.org/2000/svg', name));
+
+    setCrossings = () => {
+        $graphSvg.children('.crossing').remove();
+        if (getXValue() == null || getYValue() == null) return;
+        const yPosition = 200 - getYValue() * 140 / getRValue();
+
+        const circle = createElement('circle').attr({
+            cx: 200 + getXValue() * 140 / getRValue(),
+            cy: yPosition,
+            r: 3,
+        }).addClass('crossing');
+
+        $graphSvg.append(circle);
+    };
+
+    setRawRValue = () => {
+        setCrossings();
+    };
+
+
+    setRawYValue = (rawYValue) => {
+        if (getRValue() == null || rawYValue == null) return;
+        $graphSvg.children('.dotted-raw-y').remove();
+        $rawYValue = (200 - rawYValue) * getRValue() / 140;
+
+        const line = createElement('line').attr({
+            x1: 0,
+            x2: 400,
+            y1: rawYValue,
+            y2: rawYValue,
+        }).addClass('dotted-raw-y');
+
+        $graphSvg.append(line);
+    };
+
+
+    setRawXValue = (rawXValue) => {
+        if (getRValue() == null || rawXValue == null) return;
+        $graphSvg.children('.dotted-raw-x').remove();
+        const xValue = (rawXValue - 200) * getRValue() / 140;
+
+        $.each($xValues, (index, value) => {
+            if (value - 0.5 < xValue && value + 0.5 >= xValue) {
+                $rawXValue = value;
+                const line = createElement('line').attr({
+                    x1: 200 + value * 140 / getRValue(),
+                    x2: 200 + value * 140 / getRValue(),
+                    y1: 0,
+                    y2: 400,
+                }).addClass('dotted-raw-x');
+
+                $graphSvg.append(line);
+            }
+        });
+    };
+
+
+    saveRawValues = () => {
+        if ($rawXValue == null || $rawYValue == null) return;
+
+        $xSelected.text($rawXValue);
+        $xSlider.setValue($rawXValue);
+        $xSlider.input[0].value = $rawXValue;
+        $yText.val($rawYValue);
+
+        $yText.keyup();
+    };
+
+    resetRawValues = () => {
+        $graphSvg.children('.dotted-raw-y').remove();
+        $graphSvg.children('.dotted-raw-x').remove();
+        $rawXValue = null;
+        $rawYValue = null;
+    };
+
+
+
+    /**
+     * Validations
+     */
+
 
     checkY = (yValue) => yValue >= -3 && yValue <= 3;
     checkR = (rValue) => $rValues.includes(rValue);
@@ -128,7 +242,7 @@ $(() => {
 
 
     getXValue = () => {
-        return ice.ace.instance('j_idt23:x-value').getValue();
+        return $xSlider.getValue();
     };
 
     getYValue = () => {
@@ -146,14 +260,15 @@ $(() => {
 
 
 
-    $yText.focus(() => resetYValidity($yText)).keyup(() => {
-    }).matcher(/^[+-]?\d*?[.,]?\d*?$/);
+    $yText.focus(() => resetYValidity($yText)).keyup(() => { setCrossings(); }).
+    matcher(/^[+-]?\d*?[.,]?\d*?$/);
 
     $rButton.children().each((index, element) => {
         const $element = $(element);
         $element.click(() => {
             $rSelected.text($element.text());
             resetRValidity($rButton);
+            setRawRValue()
         });
     });
 
@@ -181,13 +296,15 @@ $(() => {
         if (!validateValues()) return event.preventDefault();
     });
 
-    ice.ace.instance('j_idt23:x-value').onSlide = function(event, ui) {
-        ice.ace.instance('j_idt23:x-value').input[0].value = ui.value;
-        $xSelected.text(ui.value)
+    $xSlider.onSlideEnd = function(event, ui) {
+        $xSlider.input[0].value = ui.value;
+        $xSelected.text(ui.value);
+        setCrossings();
     };
 
 
     loadSession({$xSlider, $xSelected, $yText, $rSelected});
+    setCrossings();
     $(window).on('beforeunload', () => storeSession({
         xValue: getXValue(),
         yValue: getYValue(),
@@ -202,28 +319,6 @@ $(() => {
         $rSelected.text($rDefault);
         resetYValidity($yText);
         resetRValidity($rButton);
-    });
-
-
-
-
-
-
-    $graphSvg.mouseenter(() => {
-        const rValue = getRValue();
-        setGraphRInvalid(checkRValue(rValue), {$rButton});
-    }).mouseleave(() => {
-
-        resetRValidity($rButton);
-    }).mousemove((event) => {
-        const c = $graphSvg[0].getBoundingClientRect();
-        // Coordinates of the dot in pixels
-        const mouseX = event.clientX - c.x;
-        const mouseY = event.clientY - c.y;
-
-        redraw(mouseX, mouseY);
-    }).click(() => {
-
     });
 
 
