@@ -30,6 +30,16 @@ public class PointServiceJPA implements PointService, Serializable {
         return this.pointRepository.create(point);
     }
 
+    @Override
+    public boolean delete(Point point) {
+        return this.pointRepository.delete(point);
+    }
+
+    @Override
+    public void deleteAll() {
+        this.pointRepository.deleteAll();
+    }
+
 
     @Override
     public Point findById(Long id) {

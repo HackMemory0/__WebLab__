@@ -41,6 +41,43 @@ public class PointRepositoryJPA implements PointRepository, Serializable {
         return point;
     }
 
+    @Override
+    public boolean delete(Point point) {
+        EntityManager em = entityManagerFactory.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Point removePoint = em.find(Point.class, point.getId());
+
+            if(removePoint == null){ return false; }
+
+            em.remove(em.contains(removePoint) ? removePoint : em.merge(removePoint));
+            em.getTransaction().commit();
+            return true;
+        }catch (Exception e){
+            try {
+                em.getTransaction().rollback();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        return false;
+    }
+
+    @Override
+    public void deleteAll() {
+        try {
+            final List<Point> pointList = findAll();
+            for (Point point : pointList) {
+                delete(point);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
 
     @Override
     public List<Point> findAll() {

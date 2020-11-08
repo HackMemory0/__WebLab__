@@ -39,7 +39,7 @@ $.fn.matcher = function(value, ignore = [8, 13, 37, 38]) {
             text.substring(event.target.selectionEnd)) &&
             !ignore.includes(event.which)) event.preventDefault();
     });
-}
+};
 
 
 $(() => {
@@ -56,6 +56,39 @@ $(() => {
 
     const $rValues = [1, 1.5, 2, 2.5, 3];
     const $xValues = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+
+
+    var clockNav = $('#clock'),
+        dateNav = $('#date');
+
+    interval = 6000;
+
+
+    /**
+     * Time
+     */
+
+    function showDate() {
+        const date = new Date();
+        var datestring = date.toLocaleDateString("ru-RU", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        });
+
+        var clockstring = date.toLocaleTimeString("ru-RU", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+        });
+
+
+        clockNav.text(clockstring);
+        dateNav.text(datestring);
+    }
+
+    showDate();
+    setInterval(showDate, interval);
 
 
     /**
@@ -82,6 +115,7 @@ $(() => {
     }).click(() => {
         saveRawValues();
         setCrossings();
+        $('.submit-button').click();
     });
 
 

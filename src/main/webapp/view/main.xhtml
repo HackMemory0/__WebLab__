@@ -27,7 +27,7 @@
                                 <polygon class="graph-shape" points="200,200 200,60 270,200" />
 
                                 <!--circle-->
-                                <path  class="graph-shape" d="M 200 340 A 180 180 0 0 0 340 200 L 200 200 Z"/>
+                                <path  class="graph-shape" d="M 200 340 A 140 140 0 0 0 340 200 L 200 200 Z"/>
 
                                 <!--text-->
                                 <text class="graph-label" x="53" y="195">-R</text>
@@ -43,8 +43,6 @@
                                 <polygon class="graph-axle-line" points="15,200 60,200 60,197 60,203 60,200 130,200 130,197 130,203 130,200 270,200 270,197 270,203         270,200 340,200 340,197 340,203 340,200 385,200 378,197 385,200 378,203 385,200" stroke="black"/>
                                 <polygon class="graph-axle-line" points="200,385 200,340 197,340 203,340 200,340 200,270 197,270 203,270 200,270 200,130 197,130         203,130 200,130 200,60 197,60 203,60 200,60 200,15 197,22 200,15 203,22 200,15" stroke="black"/>
 
-                                <!--dot-->
-                                <circle id="dot" r="3" cx="200" cy="200" fill="red"/>
                             </svg>
                         </div>
                 </div>
@@ -74,7 +72,7 @@
                         <div class="form-group" id="y-input">
                             <label class="font-weight-bold mb-0" for="y-text">Y value:</label>
                             <small class="form-text text-muted mb-2">Must be from -3 to 3</small>
-                            <h:inputText autocomplete="off" id="y-text" styleClass="form-control y-text"
+                            <h:inputText maxlength="16" autocomplete="off" id="y-text" styleClass="form-control y-text"
                                          a:placeholder="Enter value" type="text" value="#{controller.item.y}">
                                 <f:ajax event="keyup"/>
                             </h:inputText>
@@ -109,7 +107,9 @@
                             <h:commandButton value="Clear form" styleClass="btn m-1 btn-secondary clear-from-button"
                                              type="button" />
                             <h:commandButton value="Clear table" styleClass="btn m-1 btn-secondary"
-                                             type="button" />
+                                             type="button" action="#{controller.deleteTable}" >
+                                <f:ajax execute="@form" render="point-table"/>
+                            </h:commandButton>
                         </div>
                     </h:form>
                 </div>
@@ -146,7 +146,9 @@
 
                         <h:column>
                             <f:facet name="header">Execution time</f:facet>
-                            #{point.time}
+                            <h:outputText value="#{point.time}">
+                                <f:convertNumber pattern="#.#####"/>
+                            </h:outputText>
                         </h:column>
                     </h:dataTable>
                 </div>
@@ -156,6 +158,6 @@
 
 
         <ui:include src="template/footer.xhtml"/>
-        <h:outputScript library="js" name="validator.js"/>
+        <h:outputScript library="js" name="main.js"/>
     </h:body>
 </html>
