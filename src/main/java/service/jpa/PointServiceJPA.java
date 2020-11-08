@@ -6,9 +6,6 @@ import repository.PointRepository;
 import service.PointService;
 
 
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;

@@ -3,13 +3,9 @@ package repository.jpa;
 import model.Point;
 import repository.PointRepository;
 
-import javax.annotation.Resource;
-import javax.ejb.Stateful;
-import javax.ejb.Stateless;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.*;
-import javax.transaction.UserTransaction;
 import java.io.Serializable;
 import java.util.List;
 
