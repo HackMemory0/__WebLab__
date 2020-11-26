@@ -1,4 +1,4 @@
-package ru.ifmo.web.SpringWeb.security;
+package ru.ifmo.web.SpringWeb.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

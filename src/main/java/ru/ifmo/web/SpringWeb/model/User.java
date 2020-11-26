@@ -4,10 +4,15 @@ package ru.ifmo.web.SpringWeb.model;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Collection;
 
@@ -22,9 +27,13 @@ public class User implements Serializable, UserDetails {
     private Long id;
 
     @Column(nullable = false, unique = true)
+    @NotEmpty(message = "Can't be empty")
+    @Length(min = 6, message = "Must be greater than 6")
     private String username;
 
     @Column(nullable = false)
+    @NotEmpty(message = "Can't be empty")
+    @Length(min = 6, message = "Must be greater than 6")
     private String password;
 
     public User() {

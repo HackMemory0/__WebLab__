@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import ru.ifmo.web.SpringWeb.security.JwtFilter;
+import ru.ifmo.web.SpringWeb.security.jwt.JwtFilter;
 import ru.ifmo.web.SpringWeb.service.UserService;
 
 @Configuration
