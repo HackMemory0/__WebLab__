@@ -1,6 +1,7 @@
 package ru.ifmo.web.SpringWeb.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,13 +28,10 @@ public class User implements Serializable, UserDetails {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    @NotEmpty(message = "Can't be empty")
-    @Length(min = 6, message = "Must be greater than 6")
     private String username;
 
     @Column(nullable = false)
-    @NotEmpty(message = "Can't be empty")
-    @Length(min = 6, message = "Must be greater than 6")
+    @JsonIgnore
     private String password;
 
     public User() {
@@ -57,26 +55,31 @@ public class User implements Serializable, UserDetails {
                 '}';
     }
 
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
         return true;

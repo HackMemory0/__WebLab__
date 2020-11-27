@@ -19,7 +19,7 @@ public class Point implements Serializable {
 
     private Double y;
 
-    private Double r;
+    private Integer r;
 
     private Boolean hit;
 
@@ -31,7 +31,7 @@ public class Point implements Serializable {
 
     public Point(){}
 
-    public Point(int x, double y, double r){
+    public Point(int x, double y, int r){
         this.x = x;
         this.y = y;
         this.r = r;

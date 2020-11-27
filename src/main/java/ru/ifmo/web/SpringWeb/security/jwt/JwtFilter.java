@@ -1,6 +1,7 @@
 package ru.ifmo.web.SpringWeb.security.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,6 +40,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         } catch (Exception e) {
+            httpServletResponse.sendError(HttpStatus.UNAUTHORIZED.value(), "UNAUTHORIZED");
             System.err.println("Cannot set user authentication: " + e);
         }
 

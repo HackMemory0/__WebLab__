@@ -1,4 +1,4 @@
-package ru.ifmo.web.SpringWeb.payload;
+package ru.ifmo.web.SpringWeb.payload.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ErrorResponse {
+    private final boolean result = false;
     private Object error;
 }

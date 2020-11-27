@@ -16,8 +16,6 @@ import ru.ifmo.web.SpringWeb.service.UserService;
 @EnableWebSecurity
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    UserService userService;
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
