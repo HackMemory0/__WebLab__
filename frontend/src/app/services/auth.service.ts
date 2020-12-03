@@ -20,6 +20,10 @@ export class AuthService {
     return this.tokenService.getToken() !== null;
   }
 
+  getUser() {
+    return this.tokenService.getUser();
+  }
+
   login(user: User): Observable<any> {
     return this.http.post(AppComponent.API_URL + '/login', user, httpOptions);
   }
