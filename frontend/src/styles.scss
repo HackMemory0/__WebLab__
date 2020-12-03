@@ -3,7 +3,8 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
 
 html {
   height: 100%;
@@ -21,7 +22,7 @@ html {
   --default-background: #3B00E2;
 
   --color-primary: #D3F971;
-  --color-secondary: #4B917D;
+  --color-secondary: #0a9152;
   --color-tertiary: #FFFFFF;
   --color-quaternary: #EE209B;
 }

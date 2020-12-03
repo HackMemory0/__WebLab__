@@ -29,7 +29,10 @@ export class LoginComponent implements OnInit {
       .subscribe(data=>{
           this.tokenService.saveToken(data.token);
           this.userService.getCurrentProfile()
-           .subscribe(data => this.tokenService.saveUser(data));
+           .subscribe(data => {
+             this.tokenService.saveUser(data)
+             this.router.navigate(['/profile'])
+           });
         },err=>{
             this.errorMessage = "Username or password is incorrect";
             this.open(this.contentRef);

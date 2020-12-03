@@ -13,6 +13,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {AuthGuard} from "./guard/auth.guard";
+import {LoggedInAuthGuard} from "./guard/logged-in.guard";
 
 @NgModule({
   declarations: [
@@ -22,7 +26,8 @@ import { RegisterComponent } from './components/register/register.component';
     FooterComponent,
     HomeComponent,
     LogoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,10 @@ import { RegisterComponent } from './components/register/register.component';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, AuthGuard, LoggedInAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

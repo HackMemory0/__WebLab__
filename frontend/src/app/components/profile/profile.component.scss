@@ -28,7 +28,7 @@
 .area-9 { grid-area: nine; }
 
 .hover-area:nth-of-type(1):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(-10deg) rotateX(10deg);
     & .secondary, .quaternary {
       transform: translateX(-.5rem) rotateY(2deg) rotateX(-2deg);
@@ -36,7 +36,7 @@
   }
 }
 .hover-area:nth-of-type(2):hover {
-  &~.box {
+  &~.profile-box {
     transform: rotateY(0deg) rotateX(10deg);
     & .secondary, .quaternary {
       transform: translateX(0) rotateX(0) rotateX(-2deg);
@@ -44,7 +44,7 @@
   }
 }
 .hover-area:nth-of-type(3):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(10deg) rotateX(10deg);
     & .secondary, .quaternary {
       transform: translateX(.5rem) rotateY(-2deg) rotateX(-2deg);
@@ -52,7 +52,7 @@
   }
 }
 .hover-area:nth-of-type(4):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(-10deg);
     & .secondary, .quaternary {
       transform: translateX(-.5rem) rotateX(2deg);
@@ -60,7 +60,7 @@
   }
 }
 .hover-area:nth-of-type(5):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(0deg);
     & .secondary, .quaternary {
       transform: translateX(0) rotateX(0);
@@ -68,7 +68,7 @@
   }
 }
 .hover-area:nth-of-type(6):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(10deg);
     & .secondary, .quaternary {
       transform: translateX(.5rem) rotateX(-2deg);
@@ -76,7 +76,7 @@
   }
 }
 .hover-area:nth-of-type(7):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(-10deg) rotateX(-10deg);
     & .secondary, .quaternary {
       transform: translateX(-.5rem) rotateY(2deg) rotateX(2deg);
@@ -84,7 +84,7 @@
   }
 }
 .hover-area:nth-of-type(8):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(0deg) rotateX(-10deg);
     & .secondary, .quaternary {
       transform: translateX(0) rotateX(0) rotateX(2deg);
@@ -92,7 +92,7 @@
   }
 }
 .hover-area:nth-of-type(9):hover {
-  &~.box {
+  &~.profile-card {
     transform: rotateY(10deg) rotateX(-10deg);
     & .secondary, .quaternary {
       transform: translateX(.5rem) rotateY(-2deg) rotateX(2deg);
@@ -100,75 +100,86 @@
   }
 }
 
-
-.box {
+.profile-card {
   align-self: center;
   display: flex;
   flex-direction: column;
   grid-area: 1 / 2 / 3 / 3;
   justify-content: space-between;
   justify-self: center;
-
-  padding: 40px;
-  position: relative;
-  top: 10%;
-  text-align: center;
   transition: 2s cubic-bezier(0.215, 0.61, 0.355, 1);
   margin-top: 100px;
+  top: 10%;
+  padding: 40px;
+
+
+  position:relative;
+  width:300px;
+  min-height:400px;
+  background:#fff;
+  box-shadow:0 20px 50px rgba(0,0,0,.1);
   border-radius:10px;
 }
-
-.box:hover {
+.profile-card:hover {
   box-shadow:0 30px 70px rgba(0,0,0,.2);
 }
-
-
-.box input[type="text"],
-.box input[type="password"] {
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #3498db;
-  padding: 10px 10px;
-  //width: 250px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s
+.profile-card .profile-box {
+  position:absolute;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  width:100%;
 }
-
-.box h1 {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500
+.profile-card .profile-box .img {
+  width:120px;
+  height:120px;
+  margin:0 auto;
+  border-radius:50%;
+  overflow:hidden;
 }
-
-.box input[type="text"]:focus,
-.box input[type="password"]:focus {
-  //width: 300px;
-  border-color: #2ecc71
+.profile-card .profile-box .img img {
+  width:100%;
+  height:100%;
 }
-
-.box input[type="submit"] {
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #2ecc71;
-  padding: 14px 40px;
-  outline: none;
-  color: white;
-  border-radius: 10vh;
-  transition: 0.25s;
-  cursor: pointer
+.profile-card .profile-box h2 {
+  font-size:20px;
+  color:#262626;
+  margin:20px auto;
 }
-
-.box input[type="submit"]:hover {
-  background: #2ecc71
+.profile-card .profile-box h2 span {
+  font-size:14px;
+  background:#e91e63;
+  color:#fff;
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:15px;
 }
-
-.forgot {
-  text-decoration: underline
+.profile-card .profile-box p {
+  color:#262626;
+}
+.profile-card .profile-box span {
+  display:inline-flex;
+}
+.profile-card .profile-box ul {
+  margin:0;
+  padding:0;
+}
+.profile-card .profile-box ul li {
+  list-style:none;
+  float:left;
+}
+.profile-card .profile-box ul li a {
+  display:block;
+  color:#aaa;
+  margin:0 10px;
+  font-size:20px;
+  transition:0.5s;
+  text-align:center;
+}
+.profile-card .profile-box ul li:hover a {
+  color:#e91e63;
+  transform:rotateY(360deg);
 }
