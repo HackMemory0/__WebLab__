@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
-  static API_URL = 'http://localhost:8080';
+  static API_URL = environment.production ? 'http://localhost:4480/SpringWeb' : "http://localhost:4480";
 }

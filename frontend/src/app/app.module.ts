@@ -21,6 +21,7 @@ import { MainComponent } from './components/main/main.component';
 import {NotifierModule, NotifierOptions} from "angular-notifier";
 import { GraphComponent } from './components/main/graph/graph.component';
 import { HistoryComponent } from './components/history/history.component';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 
 const notifierDefaultOptions: NotifierOptions = {
@@ -88,7 +89,7 @@ const notifierDefaultOptions: NotifierOptions = {
     FontAwesomeModule,
     NotifierModule.withConfig(notifierDefaultOptions)
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, AuthGuard, LoggedInAuthGuard],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, AuthGuard, LoggedInAuthGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
