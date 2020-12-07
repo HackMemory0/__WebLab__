@@ -15,6 +15,8 @@ import ru.ifmo.web.SpringWeb.payload.response.MessageResponse;
 import ru.ifmo.web.SpringWeb.service.PointService;
 
 import javax.validation.Valid;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -34,7 +36,13 @@ public class PointController {
     public ResponseEntity<?> get(Authentication authentication) {
         List<Point> pointList = pointService.getPointsByUser((User) authentication.getPrincipal());
         if(pointList != null){
-            return ResponseEntity.ok(pointList);
+            pointList.sort((left, right) -> (int) (right.getId() - left.getId()));
+//            Collections.reverse(pointList);
+
+            Map<String, Object> out = new HashMap<>();
+            out.put("total", pointList.size());
+            out.put("points", pointList);
+            return ResponseEntity.ok(out);
         }
 
         return ResponseEntity
@@ -56,7 +64,12 @@ public class PointController {
         point.setUser((User) authentication.getPrincipal());
         pointService.addPoint(point);
 
-        return ResponseEntity.ok(new MessageResponse("New point added"));
+        Map<String, Object> out = new HashMap<>();
+        out.put("result", true);
+        out.put("data", point);
+
+        return ResponseEntity.ok(out);
+//        return ResponseEntity.ok(new MessageResponse("New point added"));
     }
 
 

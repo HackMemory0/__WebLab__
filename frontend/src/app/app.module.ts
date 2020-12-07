@@ -17,6 +17,52 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AuthGuard} from "./guard/auth.guard";
 import {LoggedInAuthGuard} from "./guard/logged-in.guard";
+import { MainComponent } from './components/main/main.component';
+import {NotifierModule, NotifierOptions} from "angular-notifier";
+import { GraphComponent } from './components/main/graph/graph.component';
+import { HistoryComponent } from './components/history/history.component';
+
+
+const notifierDefaultOptions: NotifierOptions = {
+  position: {
+    horizontal: {
+      position: "right",
+      distance: 12
+    },
+    vertical: {
+      position: "bottom",
+      distance: 12,
+      gap: 10
+    }
+  },
+  theme: "material",
+  behaviour: {
+    autoHide: 3000,
+    onClick: "hide",
+    onMouseover: "pauseAutoHide",
+    showDismissButton: true,
+    stacking: 4
+  },
+  animations: {
+    enabled: true,
+    show: {
+      preset: "slide",
+      speed: 300,
+      easing: "ease"
+    },
+    hide: {
+      preset: "fade",
+      speed: 300,
+      easing: "ease",
+      offset: 50
+    },
+    shift: {
+      speed: 300,
+      easing: "ease"
+    },
+    overlap: 150
+  }
+};
 
 @NgModule({
   declarations: [
@@ -27,7 +73,10 @@ import {LoggedInAuthGuard} from "./guard/logged-in.guard";
     HomeComponent,
     LogoutComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    MainComponent,
+    GraphComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +85,8 @@ import {LoggedInAuthGuard} from "./guard/logged-in.guard";
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NotifierModule.withConfig(notifierDefaultOptions)
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, AuthGuard, LoggedInAuthGuard],
   bootstrap: [AppComponent]

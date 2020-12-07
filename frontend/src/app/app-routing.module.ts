@@ -7,12 +7,17 @@ import {RegisterComponent} from "./components/register/register.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {LoggedInAuthGuard} from "./guard/logged-in.guard";
 import {AuthGuard} from "./guard/auth.guard";
+import {MainComponent} from "./components/main/main.component";
+import {HistoryComponent} from "./components/history/history.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent , canActivate:[LoggedInAuthGuard]},
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent , canActivate:[LoggedInAuthGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'logout', component: LogoutComponent},
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard]},
+  { path: 'main', component: MainComponent, canActivate: [AuthGuard]},
+  { path: 'history', component: HistoryComponent, canActivate: [AuthGuard]},
+  { path: 'history/:id', component: HistoryComponent, canActivate: [AuthGuard]},
   { path: '', component: HomeComponent },
 ];
 

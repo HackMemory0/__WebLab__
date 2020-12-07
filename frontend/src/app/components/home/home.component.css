@@ -138,6 +138,7 @@
 }
 
 .secondary {
+  align-self: flex-end;
   color: var(--color-secondary);
 }
 
@@ -151,7 +152,7 @@
 }
 
 .secondary, .quaternary {
-  transition: transform ease 2s;
+  transition: transform cubic-bezier(0.45, 0.05, 0.55, 0.95) 2s;
 }
 
 /*# sourceMappingURL=home.component.css.map */

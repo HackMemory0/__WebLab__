@@ -36,7 +36,7 @@
   }
 }
 .hover-area:nth-of-type(2):hover {
-  &~.profile-box {
+  &~.profile-card {
     transform: rotateY(0deg) rotateX(10deg);
     & .secondary, .quaternary {
       transform: translateX(0) rotateX(0) rotateX(-2deg);
@@ -101,7 +101,6 @@
 }
 
 .profile-card {
-  align-self: center;
   display: flex;
   flex-direction: column;
   grid-area: 1 / 2 / 3 / 3;
@@ -181,5 +180,4 @@
 }
 .profile-card .profile-box ul li:hover a {
   color:#e91e63;
-  transform:rotateY(360deg);
 }

@@ -18,6 +18,6 @@ public class PointAddRequest {
     private Double y;
 
     @NotNull(message = "Enter R value")
-    @Min(value = -4, message = "Must be from -4 to 4") @Max(value = 4, message = "Must be from -4 to 4")
+    @Min(value = 1, message = "Must be from 1 to 4") @Max(value = 4, message = "Must be from 1 to 4")
     private Integer r;
 }

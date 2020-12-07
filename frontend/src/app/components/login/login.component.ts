@@ -1,5 +1,5 @@
 import {Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/core';
-import {User} from "../../model/model.user";
+import {User} from "../../model/request/model.user";
 import {Router} from "@angular/router";
 import {AuthService} from "../../services/auth.service";
 import {TokenStorageService} from "../../services/token-storage.service";
