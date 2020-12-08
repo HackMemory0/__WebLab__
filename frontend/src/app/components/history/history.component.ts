@@ -15,6 +15,8 @@ export class HistoryComponent implements OnInit {
   page = 1;
   itemsPerPage = 8;
 
+  title = "History";
+
   constructor(private pointService: PointService, private router: ActivatedRoute) {
 
   }
