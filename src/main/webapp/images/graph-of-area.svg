@@ -1,0 +1,28 @@
+<!-- The main graph picture -->
+<svg id="graph" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+    <!-- Rectangle piece-->
+    <rect x="200" y="200" width="140" height="70" fill="#82bdff"/>
+    <!-- Triangle piece -->
+    <polygon points="200,200 200,60 270,200" fill="#82bdff"/>
+    <!-- 1/4 of Circle piece (sector) -->
+    <path d="M 200 200 L60 200 A 140 140 0 0 0 200 340" fill="#82bdff"/>
+    <!-- Axis 'X' -->
+    <polygon points="15,200 60,200 60,197 60,203 60,200 130,200 130,197 130,203 130,200 270,200 270,197 270,203
+        270,200 340,200 340,197 340,203 340,200 385,200 378,197 385,200 378,203 385,200" stroke="black"/>
+    <!-- Point -->
+    <text x="53" y="195">-R</text>
+    <text x="118" y="195">-R/2</text>
+    <text x="262" y="195">R/2</text>
+    <text x="335" y="195">R</text>
+    <!-- Axes 'Y' -->
+    <polygon points="200,385 200,340 197,340 203,340 200,340 200,270 197,270 203,270 200,270 200,130 197,130
+        203,130 200,130 200,60 197,60 203,60 200,60 200,15 197,22 200,15 203,22 200,15" stroke="black"/>
+    <!-- Point -->
+    <text x="205" y="64">R</text>
+    <text x="205" y="134">R/2</text>
+    <text x="205" y="273">-R/2</text>
+    <text x="205" y="343">-R</text>
+    <!-- Indicator DOT -->
+    <circle id="dot" r="3" cx="200" cy="200" fill="red"/>
+
+</svg>

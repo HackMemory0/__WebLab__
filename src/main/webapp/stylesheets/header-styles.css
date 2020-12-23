@@ -1,0 +1,64 @@
+
+/*** Header styles ***/
+
+.header {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.header-wrapper {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid silver;
+}
+
+#link-to-se {
+    color: #9b67ef;
+    margin-right: auto;
+    font-family: Supercell Magic, sans-serif;
+    font-weight: bolder;
+    font-size: 19px;
+    text-shadow: 2px 1px #181818;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-lister {
+    display: block;
+    float: left;
+    margin-right: 16px;
+}
+
+.menu #separator {
+    transform: scaleY(1.5);
+}
+
+#link-to-git {
+    color: #000000;
+    padding: 4px 14px 4px 14px;
+    text-decoration: none;
+    border: 1px solid #b1b1b1;
+    border-radius: 15px;
+    transition: 0.2s;
+    /*background-color: #e2e2e2;*/
+    /*box-shadow: 1px 1px 1px #7e7e7e;*/
+}
+
+#link-to-git:hover,
+#link-to-git:active {
+    background-color: #e4e4e4;
+}
+
+#link-to-git:active {
+    box-shadow: 0 0 0 2px #e2e2e2;
+}
+
+#link-to-git img {
+    width: 12px;
+}

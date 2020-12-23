@@ -1,0 +1,168 @@
+
+/*** Form styles ***/
+
+.form {
+    margin-top: 56px;
+    /*background-color: #fcfcfc;*/
+}
+
+.form-wrapper {
+    padding: 42px 12px 0 12px;
+    border-bottom: 1px solid silver;
+}
+
+.graph-field {
+    float: left;
+}
+
+.graph-wrapper {
+    /*padding: 10px;*/
+    border-radius: 8px;
+    border: 1px solid silver;
+    background-color: #f9fcfd;
+}
+
+#message {
+    width: 400px;
+    height: 44px;
+    display: block;
+    color: #ec5454;
+    text-shadow: 0 0 2px red;
+    text-align: center;
+    padding: 12px 10px;
+}
+
+.point {
+    font-family: Varela Round, sans-serif;
+    font-size: 13px;
+}
+
+.form-field {
+    width: 55%;
+    float: right;
+}
+
+.request-field-title {
+    margin: 40px auto;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.request-field-left {
+    float: left;
+}
+
+.field-outer {
+    padding: 10px 30px;
+    /*text-align: center;*/
+}
+
+.field-outer label {
+    padding: 5px 10px;
+    display: block;
+}
+
+.form-effect {
+    display: block;
+    width: 220px;
+    height: 32px;
+    padding: 0 10px;
+    margin: 6px auto 0;
+    /*border: none;*/
+    border: 1px solid silver;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.form-effect:hover,
+.form-effect:focus {
+    /*border: 1px solid #7d7dff;*/
+    box-shadow: 0 0 4px #b8b8b8;
+    outline: none;
+}
+
+.error {
+    color: #ff0000;
+    background-color: #fff5f5;
+    /*box-shadow: 0 0 5px #ff0000;*/
+}
+
+.success {
+    background-color: #ecf1ff;
+}
+
+.request-field-right {
+    float: right;
+}
+
+.request-field-right .field-outer {
+    padding-bottom: 36px
+}
+
+#y-label {
+    display: block;
+    text-align: center;
+}
+
+.y-button {
+    width: 44px;
+    height: 34px;
+    margin: 5px;
+    border-radius: 14px;
+    border: 1px solid silver;
+    background-color: #fff;
+    color: #7c7c7c;
+    transition: 0.2s;
+    box-shadow: 0 0 3px silver;
+}
+
+.y-button:hover {
+    color: black;
+    background-color: #e1e9ff;
+    /*box-shadow: 0 0 0 grey;*/
+}
+
+.y-button:focus {
+    outline: none;
+}
+
+.active {
+    background-color: #e5efff;
+    box-shadow: 0 0 0 grey;
+    color: black;
+}
+
+.submit-button {
+    display: block;
+    padding: 6px 205px;
+    margin: 0 auto;
+    font-size: 14px;
+    transition: 0.3s;
+    border: 1px solid #82bdff;
+    border-radius: 12px;
+    color: white;
+    background-color: #65adfd;
+}
+
+.able {
+    background-color: #348df3;
+}
+
+.able:hover {
+    border: 1px solid #419fff;
+    background-color: #0180de;
+}
+
+.submit-button:focus, .able {
+    outline: none;
+}
+
+#dot {
+    transition: 0.2s;
+}
+
+.coordinate {
+    fill: silver;
+    font-size: 10px;
+}
